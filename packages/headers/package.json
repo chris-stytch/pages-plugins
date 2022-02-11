@@ -1,6 +1,6 @@
 {
   "name": "@cfpreview/pages-plugins-headers",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
