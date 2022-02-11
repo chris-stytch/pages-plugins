@@ -1,5 +1,11 @@
 import { KJUR } from "jsrsasign";
-import type { GoogleChatPagesPluginFunction } from "../types";
+import type { PluginArgs } from "..";
+
+type GoogleChatPagesPluginFunction<
+  Env = unknown,
+  Params extends string = any,
+  Data extends Record<string, unknown> = Record<string, unknown>
+> = PagesPluginFunction<Env, Params, Data, PluginArgs>;
 
 const extractJWTFromRequest = (request: Request) => {
   return request.headers.get("Authorization").split("Bearer ")[1];

@@ -9,9 +9,7 @@
   "files": [
     "index.js",
     "index.d.ts",
-    "types.d.ts",
     "tsconfig.json",
-    "functions/",
     "static/"
   ],
   "scripts": {

@@ -1,6 +1,8 @@
 import type Toucan from "toucan-js";
-import type { PluginArgs } from "./types";
+import type { Options } from "toucan-js/dist/types";
 
-export default function (
-  args: PluginArgs
-): PagesFunction<unknown, any, { sentry: Toucan }>;
+export type PluginArgs = Omit<Options, "context">;
+
+export type PluginData = { sentry: Toucan };
+
+export default function (args: PluginArgs): PagesFunction;

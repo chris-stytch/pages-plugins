@@ -1,4 +1,10 @@
-import type { GraphQLPagesPluginFunction } from "../types";
+import type { PluginArgs } from "..";
+
+type GraphQLPagesPluginFunction<
+  Env = unknown,
+  Params extends string = any,
+  Data extends Record<string, unknown> = Record<string, unknown>
+> = PagesPluginFunction<Env, Params, Data, PluginArgs>;
 
 const extractGraphQLQueryFromRequest = async (request: Request) => {
   if (/application\/graphql/i.test(request.headers.get("Content-Type"))) {

@@ -8,13 +8,8 @@
     "@cfpreview/pages-plugins-installer": "^0.0.1"
   },
   "scripts": {
-    "prebuild:pages": "npm run prebuild",
-    "build:pages": "npx wrangler pages functions build --script-path static/_worker.js",
-    "prebuild:worker": "npm run prebuild",
-    "build:worker": "npx wrangler pages functions build --fallback-service=''",
-    "prebuild": "cd ../..; npx @cfpreview/pages-plugins-installer packages/example/static",
-    "build": "npm run build:pages && npm run build:worker",
-    "prestart": "npm run prebuild",
+    "build": "cd ../..; npx @cfpreview/pages-plugins-installer packages/example/static",
+    "prestart": "npm run build",
     "start": "npx wrangler pages dev static"
   }
 }
