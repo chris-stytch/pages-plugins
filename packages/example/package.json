@@ -9,6 +9,7 @@
   },
   "scripts": {
     "build": "cd ../..; npx @cfpreview/pages-plugins-installer packages/example/static",
+    "build:prod": "npx wrangler pages functions build --script-path static/_worker.js",
     "prestart": "npm run build",
     "start": "npx wrangler pages dev static"
   }

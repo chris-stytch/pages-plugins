@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "prebuild:prod": "npm run build",
+    "build:prod": "npm run build:prod --workspace=./packages/example",
     "prestart": "npm run build",
     "start": "npm run start --workspace=./packages/example"
   },
