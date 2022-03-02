@@ -8,7 +8,7 @@
     "@cfpreview/pages-plugins-installer": "^0.0.1"
   },
   "scripts": {
-    "clean": "rm static/_worker.js",
+    "clean": "rm -f static/_worker.js",
     "build": "cd ../..; npx @cfpreview/pages-plugins-installer packages/example/static",
     "build:prod": "npx wrangler pages functions build --script-path static/_worker.js",
     "prestart": "npm run clean && npm run build",

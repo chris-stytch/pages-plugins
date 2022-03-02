@@ -1725,3 +1725,8 @@ declare type PagesPluginFunction<
 > = (
   context: EventPluginContext<Env, Params, Data, PluginArgs>
 ) => Response | Promise<Response>;
+
+declare module "*.asset" {
+  const onRequest: PagesFunction;
+  export { onRequest };
+}

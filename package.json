@@ -13,6 +13,6 @@
   ],
   "devDependencies": {
     "typescript": "^4.5.5",
-    "wrangler": "https://prerelease-registry.developers.workers.dev/runs/1806889192/wrangler"
+    "wrangler": "file:../wrangler2/packages/wrangler"
   }
 }

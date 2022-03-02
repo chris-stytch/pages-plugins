@@ -3,9 +3,6 @@
   "version": "0.1.1",
   "main": "index.js",
   "types": "index.d.ts",
-  "directories": {
-    "assets": "static"
-  },
   "files": [
     "index.js",
     "index.d.ts",
