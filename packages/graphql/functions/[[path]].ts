@@ -1,1 +1,1 @@
-export { onRequest } from "../static.asset";
+export { onRequest } from "../static.static";

@@ -59,11 +59,12 @@ For example, you can access `data.sentry` and set user information like so:
 ```typescript
 // ./functions/admin/_middleware.ts
 
-import type sentryPlugin from "@cfpreview/pages-plugins-sentry";
+import type { PluginData } from "@cfpreview/pages-plugins-sentry";
 
-type PagesFunctionWithSentry = ReturnType<typeof sentryPlugin>;
-
-export const onRequest: PagesFunctionWithSentry = async ({ data, next }) => {
+export const onRequest: PagesFunction<unknown, any, PluginData> = async ({
+  data,
+  next,
+}) => {
   // Authenticate the user from the request and extract user's email address
   const email = await getEmailFromRequest(request);
 

@@ -30,7 +30,12 @@ export const onRequestPost: GoogleChatPagesPluginFunction = async ({
   request,
   pluginArgs,
 }) => {
-  if (!(await isAuthorized(request))) {
+  let authorized = false;
+  try {
+    authorized = await isAuthorized(request);
+  } catch {}
+
+  if (!authorized) {
     return new Response(null, { status: 403 });
   }
 
