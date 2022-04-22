@@ -69,4 +69,3 @@ type EventContext<Env, P extends string, Data> = {
 - More Plugins
 - Static assets
 - A testing story
-- Publish Workers Types
