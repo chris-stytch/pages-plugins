@@ -2,7 +2,7 @@
   "name": "@cfpreview/pages-plugins-example",
   "version": "1.0.0",
   "dependencies": {
-    "graphql": "^16.2.0"
+    "graphql": "^16.3.0"
   },
   "scripts": {
     "clean": "rm -f static/_worker.js",

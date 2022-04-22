@@ -13,10 +13,10 @@
     "build": "npx wrangler pages functions build --plugin --outfile index.js"
   },
   "devDependencies": {
-    "@googleapis/chat": "^3.2.0",
-    "@types/jsrsasign": "^9.0.3"
+    "@googleapis/chat": "^3.5.2",
+    "@types/jsrsasign": "^10.2.1"
   },
   "dependencies": {
-    "jsrsasign": "^10.5.1"
+    "jsrsasign": "^10.5.17"
   }
 }
