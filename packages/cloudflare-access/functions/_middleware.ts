@@ -1,4 +1,4 @@
-import { KJUR } from "jsrsasign";
+import { KJUR } from "jsrsasign"; // TODO: Switch out for more efficient/Access reference verification
 import type { PluginArgs } from "..";
 import { getIdentity } from "../api";
 
@@ -66,9 +66,11 @@ export const onRequest: CloudflareAccessPagesPluginFunction = async ({
 
   const { jwt, payload } = verifiedJWT;
 
-  data.cloudflareAccessJWT = {
-    payload,
-    getIdentity: () => getIdentity({ jwt, domain }),
+  data.cloudflareAccess = {
+    JWT: {
+      payload,
+      getIdentity: () => getIdentity({ jwt, domain }),
+    },
   };
 
   return next();

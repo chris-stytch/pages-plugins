@@ -13,6 +13,6 @@
   ],
   "devDependencies": {
     "typescript": "^4.5.5",
-    "wrangler": "file:../wrangler2/packages/wrangler"
+    "wrangler": "^0.0.0-9d04a68"
   }
 }

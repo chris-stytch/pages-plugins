@@ -34,4 +34,4 @@ TODO: Screenshot of settings
 
 ### API
 
-TODO
+TODO: Documentation

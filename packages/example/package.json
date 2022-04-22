@@ -4,14 +4,9 @@
   "dependencies": {
     "graphql": "^16.2.0"
   },
-  "devDependencies": {
-    "@cfpreview/pages-plugins-installer": "^0.0.1"
-  },
   "scripts": {
     "clean": "rm -f static/_worker.js",
-    "build": "cd ../..; npx @cfpreview/pages-plugins-installer packages/example/static",
-    "build:prod": "npx wrangler pages functions build --script-path static/_worker.js",
-    "prestart": "npm run clean && npm run build",
+    "build:prod": "npx wrangler pages functions build --outfile static/_worker.js",
     "start": "npx wrangler pages dev static"
   }
 }

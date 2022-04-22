@@ -1,11 +1,15 @@
-import sentryPlugin from "@cfpreview/pages-plugins-sentry/";
+import sentryPlugin from "@cfpreview/pages-plugins-sentry";
 import headersPlugin from "@cfpreview/pages-plugins-headers";
 
 export const onRequest: PagesFunction[] = [
-  sentryPlugin({
-    // dsn: "https://sentry.io/xyz",
-  }),
+  // sentryPlugin({
+  //   // dsn: "https://sentry.io/xyz",
+  // }),
   headersPlugin({
     "Access-Control-Allow-Origin": "*",
   }),
+  ({ next }) => {
+    console.log("Middle me");
+    return next();
+  },
 ];

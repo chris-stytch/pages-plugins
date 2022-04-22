@@ -12,11 +12,7 @@ export const onRequest: HeadersPagesPluginFunction = async ({
 }) => {
   const headers = new Headers(pluginArgs);
 
-  let response = await next();
-  response = new Response(
-    [101, 204, 205, 304].includes(response.status) ? null : response.body,
-    response
-  );
+  const response = await next();
 
   for (const [name, value] of headers.entries()) {
     response.headers.set(name, value);

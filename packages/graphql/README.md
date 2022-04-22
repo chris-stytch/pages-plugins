@@ -16,7 +16,12 @@ npm install --save @cfpreview/pages-plugins-graphql
 // ./functions/graphql.ts
 
 import graphQLPlugin from "@cfpreview/pages-plugins-graphql";
-import { GraphQLSchema, GraphQLObjectType, GraphQLString } from "graphql";
+import {
+  graphql,
+  GraphQLSchema,
+  GraphQLObjectType,
+  GraphQLString,
+} from "graphql";
 
 const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -34,6 +39,7 @@ const schema = new GraphQLSchema({
 
 export const onRequest: PagesFunction = graphQLPlugin({
   schema,
+  graphql,
 });
 ```
 

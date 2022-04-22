@@ -1,6 +1,6 @@
 {
   "name": "@cfpreview/pages-plugins-cloudflare-access",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -10,7 +10,7 @@
     "api/"
   ],
   "scripts": {
-    "build": "npx wrangler pages functions build --plugin --script-path index.js"
+    "build": "npx wrangler pages functions build --plugin --outfile index.js"
   },
   "devDependencies": {
     "@types/jsrsasign": "^9.0.3"

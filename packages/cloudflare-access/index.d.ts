@@ -41,9 +41,11 @@ export type PluginArgs = {
 };
 
 export type PluginData = {
-  cloudflareAccessJWT: {
-    payload: JWTPayload;
-    getIdentity: () => Promise<undefined | Identity>;
+  cloudflareAccess: {
+    JWT: {
+      payload: JWTPayload;
+      getIdentity: () => Promise<undefined | Identity>;
+    };
   };
 };
 
