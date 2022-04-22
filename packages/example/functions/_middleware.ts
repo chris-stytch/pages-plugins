@@ -9,7 +9,6 @@ export const onRequest: PagesFunction[] = [
     "Access-Control-Allow-Origin": "*",
   }),
   ({ next }) => {
-    console.log("Middle me");
     return next();
   },
 ];

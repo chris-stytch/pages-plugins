@@ -1,41 +1,17 @@
-<h1>Pages Plugins</h1>
-
-<h2>Yesterday</h2>
-
-<ul>
-  <li>Pages Functions</li>
-</ul>
-
-<h2>Today</h2>
-
-<ul>
-  <li>Private beta</li>
-  <li>
-    Pages Plugins/Modules/Libraries
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pages Plugins</title>
+  </head>
+  <body>
+    <h1>Pages Plugins</h1>
     <ul>
-      <li>Sentry</li>
-      <li>Headers</li>
-      <li>GraphQL (with static assets!)</li>
-      <li>Google Chat (with an external API!)</li>
-    </ul>
-  </li>
-</ul>
-
-<h2>Tomorrow</h2>
-
-<ul>
-  <li>Open beta</li>
-  <li>Polish authoring and importing API</li>
-  <li>More examples</li>
-  <li>
-    Plugins bringing more
-    <ul>
-      <li>WASM</li>
+      <li><a href="/date">Date</a></li>
       <li>
-        Cloudflare Resources (e.g. KV namespaces, Durable Objects, Cloudflare
-        Access policies)
+        <pre><code>curl -X POST http://localhost:8788/graphql -d '{"query": "{ hello }"}'</code></pre>
       </li>
-      <li>External Resources (e.g. Fauna databases, API tokens etc.)</li>
+      <li><a href="/hcaptcha">hCaptcha</a></li>
+      <li><a href="/throw">Throw</a></li>
     </ul>
-  </li>
-</ul>
+  </body>
+</html>

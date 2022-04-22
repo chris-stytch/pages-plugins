@@ -22,7 +22,7 @@
 
 ### Including a plugin
 
-Check out [the example application](./packages/example/README.md) which includes all the plugins.
+Check out [the example application](./packages/example/README.md) which includes all the plugins we have so far.
 
 If you want to run it with wrangler2, run this:
 
@@ -37,7 +37,9 @@ npm start;
 
 Check out these examples:
 
+- [Cloudflare Access](./packages/cloudflare-access)
 - [Sentry](./packages/sentry)
+- [hCaptcha](./packages/hcaptcha)
 - [Headers](./packages/headers)
 - [GraphQL](./packages/graphql)
 - [Google Chat](./packages/google-chat)
@@ -62,42 +64,9 @@ type EventContext<Env, P extends string, Data> = {
 };
 ```
 
-### Added `PagesPluginFunction`
+## To Do
 
-`_next` is a breakout: where `next` returns the next Function in the plugin's chain, eventually falling to the plugin's static assets if defined (else the application's `next`); `_next` immediately returns the application's `next`.
-
-`pluginArgs` is the argument given to the plugin factory.
-
-```ts
-declare type PagesPluginFunction<
-  Env = unknown,
-  Params extends string = any,
-  Data extends Record<string, unknown> = Record<string, unknown>,
-  PluginArgs = unknown
-> = (
-  context: EventContext<Env, Params, Data> & {
-    _next: EventContext<Env, Params, Data>["next"];
-    pluginArgs: PluginArgs;
-  }
-) => ReturnType<PagesFunction<Env, Params, Data>>;
-```
-
-## Future Work
-
-- Write a bunch of these plugins
-
-- Test plugins including other plugins
-
-- Test a plugin loaded at `/[path].ts`
-
-- Let a plugin demand requirements
-
-  - Provisioned Cloudflare stuff (e.g. a KV namespace must exist)
-
-    - Automatically deploy DOs, create KVs etc.
-
-  - User-set stuff (e.g. an env var must have a value of X)
-
-  - Third-party stuff (e.g. let's do an OAuth dance and save to a DO)
-
-- Fix `next` and `_next` fetching some given parameters (https://github.com/cloudflare/wrangler2/issues/232)
+- More Plugins
+- Static assets
+- A testing story
+- Publish Workers Types
