@@ -1,6 +1,6 @@
 import { KJUR } from "jsrsasign"; // TODO: Switch out for more efficient/Access reference verification
 import type { PluginArgs } from "..";
-import { getIdentity } from "../api";
+import { generateLoginURL, getIdentity } from "../api";
 
 type CloudflareAccessPagesPluginFunction<
   Env = unknown,
@@ -61,7 +61,12 @@ export const onRequest: CloudflareAccessPagesPluginFunction = async ({
   } catch {}
 
   if (verifiedJWT === false) {
-    return new Response(null, { status: 403 });
+    return new Response(null, {
+      status: 302,
+      headers: {
+        Location: generateLoginURL({ redirectURL: request.url, aud }),
+      },
+    });
   }
 
   const { jwt, payload } = verifiedJWT;

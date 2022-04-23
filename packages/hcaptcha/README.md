@@ -2,7 +2,7 @@
 
 # hCaptcha
 
-This plugin validates hCaptcha tokens.
+This Plugin validates hCaptcha tokens.
 
 ## Installation
 
@@ -39,7 +39,7 @@ export const onRequestPost = [
 ];
 ```
 
-This plugin only exposes a single route, so wherever it is mounted is wherever it will be available. In the above example, because it is mounted in `./functions/register.ts` it will validate requests to `/register`.
+This Plugin only exposes a single route, so wherever it is mounted is wherever it will be available. In the above example, because it is mounted in `./functions/register.ts` it will validate requests to `/register`.
 
 The [`secret`](https://dashboard.hcaptcha.com/settings) and [`sitekey`](https://dashboard.hcaptcha.com/sites) can be found in your hCaptcha dashboard.
 

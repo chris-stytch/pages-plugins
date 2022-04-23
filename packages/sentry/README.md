@@ -2,7 +2,7 @@
 
 # Sentry
 
-This Sentry plugin captures and logs all exceptions which occur below it in the execution chain. It is therefore recommended that you install this plugin at the root of your application in `functions/_middleware.ts` as the very first plugin.
+This Sentry Plugin captures and logs all exceptions which occur below it in the execution chain. It is therefore recommended that you install this Plugin at the root of your application in `functions/_middleware.ts` as the very first Plugin.
 
 ## Installation
 
@@ -22,7 +22,7 @@ export const onRequest: PagesFunction = sentryPlugin({
 });
 ```
 
-The plugin uses [Toucan](https://github.com/robertcepa/toucan-js) behind-the-scenes, so can take any of [these following options](https://github.com/robertcepa/toucan-js#other-options). `context`/`request`/`event` is already populated, so does not need to be manually included.
+The Plugin uses [Toucan](https://github.com/robertcepa/toucan-js) behind-the-scenes, so can take any of [these following options](https://github.com/robertcepa/toucan-js#other-options). `context`/`request`/`event` is already populated, so does not need to be manually included.
 
 If your [DSN](https://docs.sentry.io/product/sentry-basics/dsn-explainer/) is held as an environment variable or in KV, you can access it like so:
 
@@ -52,7 +52,7 @@ export const onRequest: PagesFunction<{
 
 ### Additional Context
 
-If you need to set additional context for Sentry (e.g. user information or additional logs), you may use the `data.sentry` instance in any Function below the plugin in the execution chain.
+If you need to set additional context for Sentry (e.g. user information or additional logs), you may use the `data.sentry` instance in any Function below the Plugin in the execution chain.
 
 For example, you can access `data.sentry` and set user information like so:
 

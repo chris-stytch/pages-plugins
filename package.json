@@ -4,11 +4,12 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "prebuild:prod": "npm run build",
-    "build:prod": "npm run build:prod --workspace=./packages/example",
+    "build:prod": "npm run build:prod --workspace=./example",
     "prestart": "npm run build",
-    "start": "npm run start --workspace=./packages/example"
+    "start": "npm run start --workspace=./example"
   },
   "workspaces": [
+    "example",
     "packages/*"
   ],
   "devDependencies": {

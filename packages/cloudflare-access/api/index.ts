@@ -25,8 +25,8 @@ export const generateLoginURL = ({
     typeof redirectURLInit === "string"
       ? new URL(redirectURLInit)
       : redirectURLInit;
-  const host = redirectURL.origin;
-  const loginURL = `/cdn-cgi/access/login/${host}?`;
+  const { hostname } = redirectURL;
+  const loginURL = `/cdn-cgi/access/login/${hostname}?`;
   const searchParams = new URLSearchParams({
     kid: aud,
     redirect_url: redirectURL.pathname + redirectURL.search,

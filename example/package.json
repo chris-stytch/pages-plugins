@@ -1,5 +1,6 @@
 {
-  "name": "@cfpreview/pages-plugins-example",
+  "name": "pages-plugins-example",
+  "private": true,
   "version": "1.0.0",
   "dependencies": {
     "graphql": "^16.3.0"

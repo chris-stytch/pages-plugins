@@ -2,7 +2,7 @@
 
 # Cloudflare Access
 
-This plugin is a middleware to validate Cloudflare Access JWT assertions. It also includes an API to lookup additional information about a given user's JWT.
+This Plugin is a middleware to validate Cloudflare Access JWT assertions. It also includes an API to lookup additional information about a given user's JWT.
 
 ## Installation
 
@@ -23,11 +23,11 @@ export const onRequest: PagesFunction = cloudflareAccessPlugin({
 });
 ```
 
-The plugin takes an object with two properties: the `domain` of your Cloudflare Access account, and the policy `aud` (audience) to validate against. Any requests which fail validation will be returned a 403.
+The Plugin takes an object with two properties: the `domain` of your Cloudflare Access account, and the policy `aud` (audience) to validate against. Any requests which fail validation will be returned a 403.
 
 ### Accessing the JWT payload
 
-If you need to use the JWT payload in your application (e.g. you need the user's email address), this plugin will make this available for you at `data.cloudflareAccess.JWT.payload`.
+If you need to use the JWT payload in your application (e.g. you need the user's email address), this Plugin will make this available for you at `data.cloudflareAccess.JWT.payload`.
 
 For example:
 
@@ -70,7 +70,7 @@ export const onRequest: PagesFunction<unknown, any, PluginData> = async ({
 
 The `getIdentity` function takes an object with two properties: a `jwt` string, and a `domain` string. It returns a `Promise` of [the object returned by the `/cdn-cgi/accesss/get-identity` endpoint](https://developers.cloudflare.com/cloudflare-one/identity/users/validating-json/#groups-within-a-jwt). This is particularly useful if you want to use a user's group membership for something like application permissions.
 
-For convience, this same information can be fetched for the current request's JWT with the `data.cloudflareAccess.JWT.getIdentity` function, (assuming you have already validated the request with the plugin as above):
+For convience, this same information can be fetched for the current request's JWT with the `data.cloudflareAccess.JWT.getIdentity` function, (assuming you have already validated the request with the Plugin as above):
 
 ```typescript
 // ./functions/greet.ts
