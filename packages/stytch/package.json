@@ -1,0 +1,13 @@
+{
+  "name": "@cfpreview/pages-plugins-stytch",
+  "version": "0.1.0",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": ["index.js", "index.d.ts"],
+  "scripts": {
+    "build": "npx wrangler pages functions build --plugin --outfile index.js"
+  },
+  "dependencies": {
+    "@stytch/stytch-js": "^3.1.2"
+  }
+}
