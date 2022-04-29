@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "dependencies": {
+    "@cfpreview/pages-plugins-stytch": "file:../packages/stytch",
     "graphql": "^16.3.0"
   },
   "scripts": {
