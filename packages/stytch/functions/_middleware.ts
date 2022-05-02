@@ -3,10 +3,10 @@ export const onRequestGet = async ({ next }) => {
 
 
   return new HTMLRewriter()
-    .on("script", {
-      element(script) {
-        script.replace(
-          `<script src="https://js.stytch.com/stytch.js"></script>`,
+    .on("body", {
+      element(body) {
+        body.append(
+          `<script src="https://js.stytch.com/stytch.js"></script><script>window.stytchClient = Stytch('REPLACE_PUBLIC_TOKEN')</script>`,
           { html: true }
         );
       },
