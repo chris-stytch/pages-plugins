@@ -1,6 +1,3 @@
-export type PluginArgs = {
-  kv: KVNamespace;
-  respondWith: (args: { formData: FormData }) => Promise<Response>;
-};
+export type PluginArgs = {};
 
 export default function (args: PluginArgs): PagesFunction;
